@@ -1,5 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "APK_RESEARCHER_ANALYSIS_TIMEOUT_MS",
+    "APK_RESEARCHER_AAPT2_PATH",
+    "APK_RESEARCHER_APKSIGNER_PATH",
+    "APK_RESEARCHER_DB_PATH",
+    "APK_RESEARCHER_MAX_UPLOAD_MB",
+    "APK_RESEARCHER_STORAGE_DIR"
+  ],
   "ui": "tui",
   "tasks": {
     "build": {
@@ -12,6 +20,10 @@
     },
     "format": {
       "dependsOn": ["^format"]
+    },
+    "test": {
+      "dependsOn": ["^test"],
+      "outputs": []
     },
     "typecheck": {
       "dependsOn": ["^typecheck"]
